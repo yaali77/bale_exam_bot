@@ -1,0 +1,95 @@
+﻿# ================================
+# Python
+# ================================
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# ================================
+# Virtual Environment
+# ================================
+.venv/
+venv/
+env/
+ENV/
+
+# ================================
+# Environment / Secrets
+# ================================
+.env
+.env.*
+!.env.example
+
+# ================================
+# Coverage / Test Reports
+# ================================
+.coverage
+.coverage.*
+htmlcov/
+.pytest_cache/
+
+# ================================
+# Local Databases
+# ================================
+*.db
+*.sqlite
+*.sqlite3
+
+# ================================
+# Runtime / Temporary Files
+# ================================
+*.tmp
+*.log
+*.pid
+
+# ================================
+# Application Data
+# ================================
+storage/
+backups/
+certs/
+
+# ================================
+# IDE / Editor
+# ================================
+.vs/
+.vscode/
+.idea/
+*.user
+*.suo
+
+# ================================
+# OS
+# ================================
+.DS_Store
+Thumbs.db
+
+# ================================
+# Node / Admin Panel
+# ================================
+admin-panel/node_modules/
+admin-panel/dist/
+admin-panel/build/
+admin-panel/.vite/
+
+# ================================
+# Build / Distribution
+# ================================
+dist/
+build/
+*.whl
+
+# Legacy test backups
+tests/*.before-*
+# ================================
+# Legacy / Backup Source Files
+# ================================
+*.bak
+*.before-*

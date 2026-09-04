@@ -1,0 +1,124 @@
+/* هویت بصری آستان: طلایی به‌عنوان Accent، طراحی Minimal و خوانا (بخش ۱۷ چک‌لیست) */
+:root {
+  --color-primary: #0d3b66;
+  --color-primary-dark: #082744;
+  --color-accent: #c9a227;
+  --color-bg: #f7f7f5;
+  --color-surface: #ffffff;
+  --color-border: #e4e2dd;
+  --color-text: #1f2937;
+  --color-text-muted: #6b7280;
+  --color-danger: #b3261e;
+  --color-success: #1b7a3d;
+  --radius: 10px;
+  --font-main: "Vazirmatn", "IRANSans", Tahoma, sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: var(--font-main);
+  background: var(--color-bg);
+  color: var(--color-text);
+  direction: rtl;
+}
+
+.app-shell { display: flex; min-height: 100vh; }
+
+.sidebar {
+  width: 240px;
+  background: var(--color-primary);
+  color: white;
+  padding: 24px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.sidebar h1 { font-size: 16px; margin: 0 0 24px; border-bottom: 2px solid var(--color-accent); padding-bottom: 12px; }
+
+.sidebar a {
+  color: rgba(255,255,255,0.85);
+  text-decoration: none;
+  padding: 10px 12px;
+  border-radius: var(--radius);
+  font-size: 14px;
+  transition: background 0.15s;
+}
+.sidebar a:hover, .sidebar a.active { background: rgba(255,255,255,0.12); color: white; }
+
+.main-content { flex: 1; padding: 28px 32px; }
+
+.topbar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; }
+.topbar h2 { margin: 0; font-size: 20px; }
+
+.card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 20px;
+}
+
+.stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px; margin-bottom: 24px; }
+.stat-card { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius); padding: 18px; border-top: 3px solid var(--color-accent); }
+.stat-card .value { font-size: 26px; font-weight: 700; color: var(--color-primary); }
+.stat-card .label { font-size: 13px; color: var(--color-text-muted); margin-top: 4px; }
+
+table { width: 100%; border-collapse: collapse; font-size: 14px; }
+th, td { padding: 10px 12px; text-align: right; border-bottom: 1px solid var(--color-border); }
+th { color: var(--color-text-muted); font-weight: 600; background: #fafaf8; }
+tr:hover td { background: #fafaf8; }
+
+.badge { display: inline-block; padding: 3px 10px; border-radius: 999px; font-size: 12px; font-weight: 600; }
+.badge-green { background: #e6f4ea; color: var(--color-success); }
+.badge-red { background: #fbeaea; color: var(--color-danger); }
+.badge-gray { background: #eee; color: #555; }
+.badge-gold { background: #fbf2da; color: #8a6d1a; }
+
+button, .btn {
+  background: var(--color-primary);
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: var(--radius);
+  font-size: 14px;
+  cursor: pointer;
+  font-family: var(--font-main);
+}
+button:hover { background: var(--color-primary-dark); }
+button.secondary { background: transparent; color: var(--color-primary); border: 1px solid var(--color-primary); }
+button.danger { background: var(--color-danger); }
+button.accent { background: var(--color-accent); color: #3a2e05; }
+button:disabled { opacity: 0.5; cursor: not-allowed; }
+
+input, select, textarea {
+  padding: 8px 10px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  font-family: var(--font-main);
+  font-size: 14px;
+  width: 100%;
+}
+
+.login-wrapper {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(160deg, var(--color-primary), var(--color-primary-dark));
+}
+.login-card {
+  background: white;
+  padding: 36px;
+  border-radius: 14px;
+  width: 340px;
+  border-top: 4px solid var(--color-accent);
+}
+.login-card h1 { text-align: center; font-size: 18px; color: var(--color-primary); margin-bottom: 20px; }
+.field { margin-bottom: 14px; }
+.field label { display: block; margin-bottom: 6px; font-size: 13px; color: var(--color-text-muted); }
+.error-text { color: var(--color-danger); font-size: 13px; margin-top: 8px; }
+
+.toolbar { display: flex; gap: 10px; margin-bottom: 16px; align-items: center; flex-wrap: wrap; }
+.toolbar input, .toolbar select { width: auto; min-width: 200px; }
