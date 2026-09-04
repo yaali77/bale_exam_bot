@@ -41,6 +41,9 @@ jobs:
           BALE_WEBHOOK_SECRET: test-secret
           SECRET_KEY: test-secret-key-for-jwt-signing-only
           SCHEDULER_ENABLED: "false"
+          PDF_STORAGE_PATH: ${{ github.workspace }}/storage/pdf
+          EXCEL_STORAGE_PATH: ${{ github.workspace }}/storage/excel
+          QR_STORAGE_PATH: ${{ github.workspace }}/storage/qr
         run: |
           pytest \
             --cov=app \
