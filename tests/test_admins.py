@@ -1,4 +1,4 @@
-﻿from app.models.admin import Admin, AdminRole
+from app.models.admin import Admin, AdminRole
 from app.core.security import hash_password
 
 
@@ -112,7 +112,7 @@ def test_create_admin_duplicate_username(
     )
 
     assert response.status_code == 400
-    assert "نام کاربری" in response.json()["detail"]
+    assert "این نام کاربری قبلاً استفاده شده است" in response.json()["detail"]
 
 
 def test_get_my_profile(
@@ -153,7 +153,7 @@ def test_update_admin_not_found(
     )
 
     assert response.status_code == 404
-    assert "ادمین" in response.json()["detail"]
+    assert "ادمین یافت نشد" in response.json()["detail"]
 
 
 def test_update_admin_fields(

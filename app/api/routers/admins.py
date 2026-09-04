@@ -21,7 +21,7 @@ def list_admins(db: Session = Depends(get_db), admin: Admin = Depends(require_pe
 @router.post("", response_model=AdminOut)
 def create_admin(payload: AdminCreate, db: Session = Depends(get_db), admin: Admin = Depends(require_permission("settings"))):
     if db.query(Admin).filter(Admin.username == payload.username).first():
-        raise HTTPException(status_code=400, detail="Ø§ÛŒÙ† Ù†Ø§Ù… Ú©Ø§Ø±Ø¨Ø±ÛŒ Ù‚Ø¨Ù„Ø§Ù‹ Ø§Ø³ØªÙØ§Ø¯Ù‡ Ø´Ø¯Ù‡ Ø§Ø³Øª")
+        raise HTTPException(status_code=400, detail="این نام کاربری قبلاً استفاده شده است")
 
     new_admin = Admin(
         username=payload.username,
@@ -51,7 +51,7 @@ def update_admin(
 ):
     target = db.query(Admin).filter(Admin.id == admin_id).first()
     if not target:
-        raise HTTPException(status_code=404, detail="Ø§Ø¯Ù…ÛŒÙ† ÛŒØ§ÙØª Ù†Ø´Ø¯")
+        raise HTTPException(status_code=404, detail="ادمین یافت نشد")
 
     previous_role = target.role
     changes = payload.model_dump(exclude_unset=True, exclude={"new_password"})

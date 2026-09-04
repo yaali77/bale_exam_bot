@@ -123,7 +123,7 @@ def test_feature_toggle_not_found(client, super_admin_token):
     )
 
     assert response.status_code == 404
-    assert response.json()["detail"] == "Ù‚Ø§Ø¨Ù„ÛŒØª ÛŒØ§ÙØª Ù†Ø´Ø¯"
+    assert response.json()["detail"] == "قابلیت یافت نشد"
 
 
 def test_feature_toggle_twice_covers_enable_and_disable(
