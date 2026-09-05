@@ -93,3 +93,7 @@ tests/*.before-*
 # ================================
 *.bak
 *.before-*
+
+# TypeScript build cache
+tsconfig.tsbuildinfo
+*.tsbuildinfo
